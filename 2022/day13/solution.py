@@ -3,6 +3,7 @@ from itertools import zip_longest
 
 f = open(Path(__file__).resolve().parent / 'input.txt')
 
+# eval would have been easier ...
 def readPacket(s):
   def read(s,p):
     if s[p] == '[':
