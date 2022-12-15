@@ -13,3 +13,4 @@ My solutions to https://adventofcode.com/
 | 12 | [Day 12: Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | [solution.py](2022/day12/solution.py) |
 | 13 | [Day 13: Distress Signal](https://adventofcode.com/2022/day/13) | [solution.py](2022/day13/solution.py) |
 | 14 | [Day 14: Regolith Reservoir](https://adventofcode.com/2022/day/14) | [solution.py](2022/day14/solution.py) |
+| 15 | [Day 15: Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | [solution.py](2022/day15/solution.py) |
