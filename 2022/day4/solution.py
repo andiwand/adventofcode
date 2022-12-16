@@ -1,10 +1,8 @@
 from pathlib import Path
 import re
 
-f = open(Path(__file__).resolve().parent / 'input.txt')
-
 pairs = []
-for l in f:
+for l in open(Path(__file__).resolve().parent / 'input.txt'):
   m = re.match('(\d+)-(\d+),(\d+)-(\d+)',l.strip())
   pair = tuple(map(int, m.groups()))
   pairs.append((pair[0:2], pair[2:4]))

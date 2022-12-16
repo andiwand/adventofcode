@@ -1,9 +1,7 @@
 from pathlib import Path
 
-f = open(Path(__file__).resolve().parent / 'input.txt')
-
 rounds = []
-for l in f:
+for l in open(Path(__file__).resolve().parent / 'input.txt'):
   l = l.strip()
   s = l.split(' ')
   rounds.append((ord(s[0])-ord('A'), ord(s[1])-ord('X')))

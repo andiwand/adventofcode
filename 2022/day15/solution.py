@@ -1,10 +1,8 @@
 from pathlib import Path
 import re
 
-f = open(Path(__file__).resolve().parent / 'input.txt')
-
 input = []
-for l in f:
+for l in open(Path(__file__).resolve().parent / 'input.txt'):
   m = re.match('Sensor at x=(-?\d+), y=(-?\d+): closest beacon is at x=(-?\d+), y=(-?\d+)', l.strip())
   n = tuple(map(int, m.groups()))
   input.append((n[0:2], n[2:4]))

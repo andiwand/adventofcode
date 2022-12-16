@@ -1,9 +1,7 @@
 from pathlib import Path
 
-f = open(Path(__file__).resolve().parent / 'input.txt')
-
 lines = []
-for l in f:
+for l in open(Path(__file__).resolve().parent / 'input.txt'):
   l = l.strip()
   if l:
     lines.append([tuple(map(int, p.split(','))) for p in l.split(' -> ')])

@@ -1,9 +1,7 @@
 from pathlib import Path
 
-f = open(Path(__file__).resolve().parent / 'input.txt')
-
 rucksacks = []
-for l in f:
+for l in open(Path(__file__).resolve().parent / 'input.txt'):
   l = l.strip()
   rucksacks.append(l)
 
