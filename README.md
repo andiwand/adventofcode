@@ -21,8 +21,8 @@ My solutions to https://adventofcode.com/
 | 13 | [Day 13: Distress Signal](https://adventofcode.com/2022/day/13) | [solution.py](2022/day13/solution.py) |
 | 14 | [Day 14: Regolith Reservoir](https://adventofcode.com/2022/day/14) | [solution.py](2022/day14/solution.py) |
 | 15 | [Day 15: Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | [solution.py](2022/day15/solution.py) |
-| 16 | [](https://adventofcode.com/2022/day/16) | [solution.py](2022/day16/solution.py) |
-| 17 | [](https://adventofcode.com/2022/day/17) | [solution.py](2022/day17/solution.py) |
+| 16 | [Day 16: Proboscidea Volcanium](https://adventofcode.com/2022/day/16) | [solution.py](2022/day16/solution.py) |
+| 17 | [Day 17: Pyroclastic Flow](https://adventofcode.com/2022/day/17) | [solution.py](2022/day17/solution.py) |
 | 18 | [](https://adventofcode.com/2022/day/18) | [solution.py](2022/day18/solution.py) |
 | 19 | [](https://adventofcode.com/2022/day/19) | [solution.py](2022/day19/solution.py) |
 | 20 | [](https://adventofcode.com/2022/day/20) | [solution.py](2022/day20/solution.py) |

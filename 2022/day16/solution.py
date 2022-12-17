@@ -41,10 +41,11 @@ def solve(start, minutes, available_valves, dp):
 
   for v in available_valves:
     d = shortest[start][v]
-    if d+1>minutes:
+    minutes_remaining = minutes-d-1
+    if minutes_remaining < 0:
       continue
-    s = solve(v, minutes-d-1, frozenset(available_valves-set([v])), dp)
-    options.append(s+valves[v]*(minutes-d-1))
+    s = solve(v, minutes_remaining, frozenset(available_valves-set([v])), dp)
+    options.append(s+valves[v]*minutes_remaining)
 
   best = max(options)
   dp[fingerprint] = best
@@ -64,4 +65,4 @@ for i in range(0, len(working_valves)//2+1):
     s2 = solve('AA', 26, frozenset(working_valves - available_valves1), dp)
     if s1+s2 > s:
       s = s1+s2
-print(s)
+print(s, len(dp))
