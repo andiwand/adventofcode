@@ -12,8 +12,8 @@ My solutions to https://adventofcode.com/
 | 4 | [Day 4: Camp Cleanup](https://adventofcode.com/2022/day/4) | [solution.py](2022/day4/solution.py) |
 | 5 | [Day 5: Supply Stacks](https://adventofcode.com/2022/day/5) | [solution.py](2022/day5/solution.py) |
 | 6 | [Day 6: Tuning Trouble](https://adventofcode.com/2022/day/6) | [solution.py](2022/day6/solution.py) |
-| 7 | [](https://adventofcode.com/2022/day/7) | [solution.py](2022/day7/solution.py) |
-| 8 | [](https://adventofcode.com/2022/day/8) | [solution.py](2022/day8/solution.py) |
+| 7 | [Day 7: No Space Left On Device](https://adventofcode.com/2022/day/7) | [solution.py](2022/day7/solution.py) |
+| 8 | [Day 8: Treetop Tree House](https://adventofcode.com/2022/day/8) | [solution.py](2022/day8/solution.py) |
 | 9 | [](https://adventofcode.com/2022/day/9) | [solution.py](2022/day9/solution.py) |
 | 10 | [](https://adventofcode.com/2022/day/10) | [solution.py](2022/day10/solution.py) |
 | 11 | [Day 11: Monkey in the Middle](https://adventofcode.com/2022/day/11) | [solution.py](2022/day11/solution.py) |
@@ -23,7 +23,7 @@ My solutions to https://adventofcode.com/
 | 15 | [Day 15: Beacon Exclusion Zone](https://adventofcode.com/2022/day/15) | [solution.py](2022/day15/solution.py) |
 | 16 | [Day 16: Proboscidea Volcanium](https://adventofcode.com/2022/day/16) | [solution.py](2022/day16/solution.py) |
 | 17 | [Day 17: Pyroclastic Flow](https://adventofcode.com/2022/day/17) | [solution.py](2022/day17/solution.py) |
-| 18 | [](https://adventofcode.com/2022/day/18) | [solution.py](2022/day18/solution.py) |
+| 18 | [Day 18: Boiling Boulders](https://adventofcode.com/2022/day/18) | [solution.py](2022/day18/solution.py) |
 | 19 | [](https://adventofcode.com/2022/day/19) | [solution.py](2022/day19/solution.py) |
 | 20 | [](https://adventofcode.com/2022/day/20) | [solution.py](2022/day20/solution.py) |
 | 21 | [](https://adventofcode.com/2022/day/21) | [solution.py](2022/day21/solution.py) |
