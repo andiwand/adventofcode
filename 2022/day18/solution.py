@@ -22,21 +22,6 @@ def dimensions(o):
     (min(z for _,_,z in o), max(z for _,_,z in o))
   )
 
-def is_inside(o, d, p):
-  if p in o:
-    return True
-
-  i_x_n = sum(1 for x in range(d[0][0]-1,p[0]) if ((x,p[1],p[2]) in o) != ((x+1,p[1],p[2]) in o))
-  i_x_p = sum(1 for x in range(p[0],d[0][1]+1) if ((x,p[1],p[2]) in o) != ((x+1,p[1],p[2]) in o))
-
-  i_y_n = sum(1 for y in range(d[1][0]-1,p[1]) if ((p[0],y,p[2]) in o) != ((p[0],y+1,p[2]) in o))
-  i_y_p = sum(1 for y in range(p[1],d[1][1]+1) if ((p[0],y,p[2]) in o) != ((p[0],y+1,p[2]) in o))
-
-  i_z_n = sum(1 for z in range(d[2][0]-1,p[2]) if ((p[0],p[1],z) in o) != ((p[0],p[1],z+1) in o))
-  i_z_p = sum(1 for z in range(p[2],d[2][1]+1) if ((p[0],p[1],z) in o) != ((p[0],p[1],z+1) in o))
-
-  return all(i>0 and i%2==0 for i in [i_x_n, i_x_p, i_y_n, i_y_p, i_z_n, i_z_p])
-
 def invert(o, d):
   result = set()
   for x in range(d[0][0], d[0][1]+1):
@@ -61,20 +46,5 @@ def submerge(o, d):
   return result
 
 droplet_dim = dimensions(droplet)
-air = frozenset(a for a in invert(droplet, droplet_dim) if is_inside(droplet, droplet_dim, a))
-
-print(len(droplet), len(air), surface(air))
-
-print(surface(droplet)-surface(air))
-
-count = 0
-for d in droplet:
-  for n in next_neighbours(d):
-    if n not in droplet and not is_inside(droplet, droplet_dim, n):
-      count += 1
-print(count)
-
 droplet_outside = submerge(droplet, droplet_dim)
-print(len(droplet_outside))
-print(dimensions(droplet), dimensions(droplet_outside), dimensions(invert(droplet_outside, dimensions(droplet_outside))))
 print(surface(invert(droplet_outside, dimensions(droplet_outside))))
