@@ -14,8 +14,8 @@ My solutions to https://adventofcode.com/
 | 6 | [Day 6: Tuning Trouble](https://adventofcode.com/2022/day/6) | [solution.py](2022/day6/solution.py) |
 | 7 | [Day 7: No Space Left On Device](https://adventofcode.com/2022/day/7) | [solution.py](2022/day7/solution.py) |
 | 8 | [Day 8: Treetop Tree House](https://adventofcode.com/2022/day/8) | [solution.py](2022/day8/solution.py) |
-| 9 | [](https://adventofcode.com/2022/day/9) | [solution.py](2022/day9/solution.py) |
-| 10 | [](https://adventofcode.com/2022/day/10) | [solution.py](2022/day10/solution.py) |
+| 9 | [Day 9: Rope Bridge](https://adventofcode.com/2022/day/9) | [solution.py](2022/day9/solution.py) |
+| 10 | [Day 10: Cathode-Ray Tube](https://adventofcode.com/2022/day/10) | [solution.py](2022/day10/solution.py) |
 | 11 | [Day 11: Monkey in the Middle](https://adventofcode.com/2022/day/11) | [solution.py](2022/day11/solution.py) |
 | 12 | [Day 12: Hill Climbing Algorithm](https://adventofcode.com/2022/day/12) | [solution.py](2022/day12/solution.py) |
 | 13 | [Day 13: Distress Signal](https://adventofcode.com/2022/day/13) | [solution.py](2022/day13/solution.py) |
