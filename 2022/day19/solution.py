@@ -27,6 +27,12 @@ def sim(blueprint, robots, material, minutes, mem):
     return math.ceil((c-m)/r)
 
   for i,costs in reversed(list(enumerate(blueprint))):
+    # hack to reduce combinatorics
+    if i == 0 and minutes < 16+8:
+      continue
+    if i == 1 and minutes < 7+8:
+      continue
+
     time = 1+max(timeToMine(m,c,r) for m,c,r in zip(material,costs,robots))
     if time > minutes:
       continue
@@ -38,7 +44,6 @@ def sim(blueprint, robots, material, minutes, mem):
   mem[fingerprint] = result
   return result
 
-"""
 #print(sum(sim(blueprint, (1,0,0,0), (0,0,0,0), 24, {})[3]*(i+1) for i,blueprint in enumerate(blueprints)))
 ss = 0
 for i,blueprint in enumerate(blueprints):
@@ -46,7 +51,6 @@ for i,blueprint in enumerate(blueprints):
   print(i, blueprint, s)
   ss += s[3]*(i+1)
 print(ss)
-"""
 
 #print(math.prod(sim(blueprint, (1,0,0,0), (0,0,0,0), 32, {})[3] for blueprint in blueprints[:3]))
 ss = 1
