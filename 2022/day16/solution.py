@@ -26,16 +26,15 @@ shortest = {v:shortest_paths(v,tunnels) for v in ['AA'] + list(working_valves)}
 def pressure(open_valves):
   return sum(valves[s] for s in open_valves)
 
-def solve(start, minutes, available_valves, dp):
+def solve(start, minutes, available_valves, mem):
   if minutes == 0:
     return 0
   if len(available_valves) == 0:
     return 0
 
   fingerprint = (start, minutes, available_valves)
-
-  if fingerprint in dp:
-    return dp[fingerprint]
+  if fingerprint in mem:
+    return mem[fingerprint]
 
   options = [0]
 
@@ -44,16 +43,16 @@ def solve(start, minutes, available_valves, dp):
     minutes_remaining = minutes-d-1
     if minutes_remaining < 0:
       continue
-    s = solve(v, minutes_remaining, frozenset(available_valves-set([v])), dp)
+    s = solve(v, minutes_remaining, frozenset(available_valves-set([v])), mem)
     options.append(s+valves[v]*minutes_remaining)
 
   best = max(options)
-  dp[fingerprint] = best
-  return dp[fingerprint]
+  mem[fingerprint] = best
+  return mem[fingerprint]
 
-dp = {}
-s = solve('AA', 30, frozenset(working_valves), dp)
-print(s, len(dp))
+mem = {}
+s = solve('AA', 30, frozenset(working_valves), mem)
+print(s, len(mem))
 
 import itertools
 
@@ -61,8 +60,8 @@ s = 0
 for i in range(0, len(working_valves)//2+1):
   for available_valves1 in itertools.combinations(working_valves, i):
     available_valves1 = frozenset(available_valves1)
-    s1 = solve('AA', 26, available_valves1, dp)
-    s2 = solve('AA', 26, frozenset(working_valves - available_valves1), dp)
+    s1 = solve('AA', 26, available_valves1, mem)
+    s2 = solve('AA', 26, frozenset(working_valves - available_valves1), mem)
     if s1+s2 > s:
       s = s1+s2
-print(s, len(dp))
+print(s, len(mem))

@@ -24,7 +24,7 @@ My solutions to https://adventofcode.com/
 | 16 | [Day 16: Proboscidea Volcanium](https://adventofcode.com/2022/day/16) | [solution.py](2022/day16/solution.py) |
 | 17 | [Day 17: Pyroclastic Flow](https://adventofcode.com/2022/day/17) | [solution.py](2022/day17/solution.py) |
 | 18 | [Day 18: Boiling Boulders](https://adventofcode.com/2022/day/18) | [solution.py](2022/day18/solution.py) |
-| 19 | [](https://adventofcode.com/2022/day/19) | [solution.py](2022/day19/solution.py) |
+| 19 | [Day 19: Not Enough Minerals](https://adventofcode.com/2022/day/19) | [solution.py](2022/day19/solution.py) |
 | 20 | [](https://adventofcode.com/2022/day/20) | [solution.py](2022/day20/solution.py) |
 | 21 | [](https://adventofcode.com/2022/day/21) | [solution.py](2022/day21/solution.py) |
 | 22 | [](https://adventofcode.com/2022/day/22) | [solution.py](2022/day22/solution.py) |
