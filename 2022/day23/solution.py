@@ -59,11 +59,11 @@ def solve(state, maxsteps):
     dest = {e:move(e,d) for e,d in moves.items()}
     counts = Counter(dest.values())
     new_state = {}
-    for e,d in moves.items():
+    for e in state:
       if counts[dest[e]] != 1:
         new_state[e] = update_state(state[e])
         continue
-      new_state[move(e,d)] = update_state(state[e])
+      new_state[dest[e]] = update_state(state[e])
     if new_state.keys() == state.keys():
       break
     state = new_state
