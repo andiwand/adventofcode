@@ -2,7 +2,7 @@ from pathlib import Path
 
 f = open(Path(__file__).resolve().parent / 'input.txt')
 
-def parseMonkey(it):
+def parse_monkey(it):
   try:
     next(it)
   except StopIteration:
@@ -33,14 +33,14 @@ def parseMonkey(it):
 monkeys = []
 it = iter(f)
 while True:
-  m = parseMonkey(it)
+  m = parse_monkey(it)
   if m is None:
     break
   monkeys.append(m)
 import copy
 monkeys2 = copy.deepcopy(monkeys)
 
-def playRound(monkeys, divider, mod):
+def play_round(monkeys, divider, mod):
   def turn(m):
     for i in m['items']:
       m['inspections'] += 1
@@ -60,12 +60,12 @@ import math
 mod = math.prod(m['check'] for m in monkeys)
 
 for _ in range(20):
-  playRound(monkeys, 3, mod)
+  play_round(monkeys, 3, mod)
 
 s = math.prod(sorted(m['inspections'] for m in monkeys)[-2:])
 print(s)
 
 for _ in range(10000):
-  playRound(monkeys2, 1, mod)
+  play_round(monkeys2, 1, mod)
 s = math.prod(sorted(m['inspections'] for m in monkeys2)[-2:])
 print(s)

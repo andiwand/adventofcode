@@ -27,7 +27,7 @@ def sim(init, input):
       raise RuntimeError('dafuq')
     result.append(new_head)
 
-    def stepTail(new_front, old_tail):
+    def step_tail(new_front, old_tail):
       dist = tuple(new_front[i]-old_tail[i] for i in range(len(new_front)))
       absdist = tuple(abs(d) for d in dist)
       if max(absdist) <= 1:
@@ -37,7 +37,7 @@ def sim(init, input):
       return new_tail
 
     for i in range(1,len(state)):
-      result.append(stepTail(result[i-1], state[i]))
+      result.append(step_tail(result[i-1], state[i]))
 
     return tuple(result)
 
@@ -50,7 +50,7 @@ def sim(init, input):
 
   return result
 
-def printPoints(points, width, height):
+def print_points(points, width, height):
   for y in range(height,-1,-1):
     for x in range(0,width+1):
       print('#' if (x,y) in points else '.',end='')

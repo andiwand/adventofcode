@@ -47,10 +47,10 @@ def height(world):
     return 0
   return max(y for _,y in world)+1
 
-def topWorld(world, height):
+def top_world(world, height):
   return frozenset((x,y-height) for (x,y) in world if y >= height)
 
-def printWorld(world, block, width, height):
+def print_world(world, block, width, height):
   for y in range(height-1, -1, -1):
     for x in range(0, width):
       if (x,y) in world:
@@ -61,7 +61,7 @@ def printWorld(world, block, width, height):
         print('.',end='')
     print()
 
-def spawnAndDrop(world, width, wind_iter, proto_blocks_iter):
+def spawn_and_drop(world, width, wind_iter, proto_blocks_iter):
   block = spawn(next(proto_blocks_iter), (2,height(world)+3))
   while True:
     block, done = fall(world, width, wind_iter, block)
@@ -73,9 +73,9 @@ def solve(world, width, wind_iter, proto_blocks_iter, n):
   offset = height(world)
 
   for _ in range(n):
-    spawnAndDrop(world, width, wind_iter, proto_blocks_iter)
+    spawn_and_drop(world, width, wind_iter, proto_blocks_iter)
 
-  #printWorld(world, block, width, max(h,height(block)))
+  #print_world(world, block, width, max(h,height(block)))
   return height(world)-offset
 
 width = 7
@@ -86,11 +86,11 @@ def solve2(world, width, wind_iter, proto_blocks_iter, blocks, depth):
     mem = {}
     i = 0
     while True:
-      fingerprint = (proto_blocks_iter.index(), wind_iter.index(), topWorld(world, height(world)-depth))
+      fingerprint = (proto_blocks_iter.index(), wind_iter.index(), top_world(world, height(world)-depth))
       if fingerprint in mem:
         return mem[fingerprint],(i,height(world))
       mem[fingerprint] = i,height(world)
-      spawnAndDrop(world, width, wind_iter, proto_blocks_iter)
+      spawn_and_drop(world, width, wind_iter, proto_blocks_iter)
       i += 1
 
   (b1,h1),(b2,h2) = find_period(world, width, wind_iter, proto_blocks_iter, depth)

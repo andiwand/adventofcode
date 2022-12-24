@@ -18,7 +18,7 @@ for segments in lines:
 source = (500,0)
 world[source] = '+'
 
-def printWorld(world,dim):
+def print_world(world,dim):
   for j in range(dim[1][0],dim[1][1]+1):
     for i in range(dim[0][0],dim[0][1]+1):
       if (i,j) in world:
@@ -27,15 +27,15 @@ def printWorld(world,dim):
         print('.', end='')
     print()
 
-def calcDim(world):
+def calc_dim(world):
   return (
     (min(p[0] for p in world),max(p[0] for p in world)),
     (min(p[1] for p in world),max(p[1] for p in world))
   )
 
-dim = calcDim(world)
+dim = calc_dim(world)
 eow = dim[1][1]
-#printWorld(world,dim)
+#print_world(world,dim)
 #print(dim)
 
 def sim(world, source, eow):
@@ -69,9 +69,9 @@ print(count)
 j = eow+2
 for i in range(500-j-1,500+j+2):
   world[(i,j)] = '#'
-dim = calcDim(world)
+dim = calc_dim(world)
 eow = dim[1][1]
-#printWorld(world, dim)
+#print_world(world, dim)
 #print(dim)
 
 while True:
@@ -81,5 +81,5 @@ while True:
     raise RuntimeError('dafuq')
   if s == source:
     break
-#printWorld(world, dim)
+#print_world(world, dim)
 print(count)

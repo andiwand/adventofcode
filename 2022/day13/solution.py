@@ -4,17 +4,17 @@ from itertools import zip_longest
 f = open(Path(__file__).resolve().parent / 'input.txt')
 
 # eval would have been easier ...
-def readPacket(s):
+def read_packet(s):
   def read(s,p):
     if s[p] == '[':
-      return readList(s,p)
-    return readNumber(s,p)
-  def readNumber(s,p):
+      return read_list(s,p)
+    return read_number(s,p)
+  def read_number(s,p):
     e = p
     while s[e].isdigit():
       e += 1
     return int(s[p:e]),e
-  def readList(s,p):
+  def read_list(s,p):
     l = []
     p += 1
     while True:
@@ -27,15 +27,15 @@ def readPacket(s):
       i,p = read(s,p)
       l.append(i)
     return l,p
-  return readList(s,0)[0]
+  return read_list(s,0)[0]
 
 input = []
 i = iter(f)
 while True:
   n = next(i)
-  a = readPacket(n.strip())
+  a = read_packet(n.strip())
   n = next(i)
-  b = readPacket(n.strip())
+  b = read_packet(n.strip())
   input.append((a,b))
   try:
     next(i)

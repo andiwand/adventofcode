@@ -15,6 +15,25 @@ world_dim = (max(x for x,_ in world)+1,max(y for _,y in world)+1)
 
 directions = {' ':(0,0),'>':(1,0),'<':(-1,0),'^':(0,-1),'v':(0,1)}
 
+def print_world(world,wind,dim):
+  for y in range(0,dim[1]):
+    for x in range(0,dim[0]):
+      if (x,y) in world:
+        print('#', end='')
+      elif (x,y) in wind:
+        v = wind[(x,y)]
+        if isinstance(v,list):
+          if len(v) == 1:
+            v = v[0]
+          elif len(v) > 1:
+            v = len(v)
+          else:
+            raise RuntimeError('dafuq')
+        print(v, end='')
+      else:
+        print('.', end='')
+    print()
+
 def move(p,d):
   return tuple(p[i]+d[i] for i in range(len(p)))
 

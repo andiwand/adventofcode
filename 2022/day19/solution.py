@@ -19,7 +19,7 @@ def sim(blueprint, robots, material, minutes, mem, build_skipper):
   end_material = tuple(m+r*minutes for m,r in zip(material,robots))
   options = [end_material]
 
-  def timeToMine(m,c,r):
+  def time_to_mine(m,c,r):
     if m >= c:
       return 0
     if r == 0:
@@ -31,7 +31,7 @@ def sim(blueprint, robots, material, minutes, mem, build_skipper):
     if build_skipper(i,minutes):
       continue
 
-    time = 1+max(timeToMine(m,c,r) for m,c,r in zip(material,costs,robots))
+    time = 1+max(time_to_mine(m,c,r) for m,c,r in zip(material,costs,robots))
     if time > minutes:
       continue
     new_robots = tuple(r+(1 if i==j else 0) for j,r in enumerate(robots))
