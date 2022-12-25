@@ -30,4 +30,4 @@ My solutions to https://adventofcode.com/
 | 22 | [Day 22: Monkey Map](https://adventofcode.com/2022/day/22) | [solution.py](2022/day22/solution.py) |
 | 23 | [Day 23: Unstable Diffusion](https://adventofcode.com/2022/day/23) | [solution.py](2022/day23/solution.py) |
 | 24 | [Day 24: Blizzard Basin](https://adventofcode.com/2022/day/24) | [solution.py](2022/day24/solution.py) |
-| 25 | [](https://adventofcode.com/2022/day/25) | [solution.py](2022/day25/solution.py) |
+| 25 | [Day 25: Full of Hot Air](https://adventofcode.com/2022/day/25) | [solution.py](2022/day25/solution.py) |
